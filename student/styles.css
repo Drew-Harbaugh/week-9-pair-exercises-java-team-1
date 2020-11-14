@@ -44,13 +44,13 @@ main img {
     width: 35%;
 }
 
-main li:before {
+ul#popsicles li:before {
     content: '🍡';
     margin-left: -31px;
     padding-right: 8px;
 }
 
-main, section, footer {
+main, footer {
     background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
@@ -124,11 +124,49 @@ button {
 footer {
     margin: 5px;
 }
-div.subsection{
+ div.subsection{
    margin: 5px;
     background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
+    
+}
+div#rainbow.subsection {
+    display: flex;
+    flex-direction: row;
+    grid-area: rainbow;
+}
+div#rainbow.subsection img{
+    max-width: 40%;
+    height: auto;
+}
+div#blue1{
+    grid-area: blue1;
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 800px){
+    div#rainbow.subsection {
+        display: flex;
+        flex-direction: column;
+        grid-area: rainbow;
+        justify-content: center;
+    }
+    div#rainbow.subsection img{
+        max-width: 100%;
+        height: auto;
+    }
+    
+    section#bottom-grid{
+   
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "rainbow"
+        "rainbow"
+        "blue1"
+        "store";
+    }
+    
 }
 @media screen and (max-width: 800px) {
   /* div.from, ul.buttons, main, footer{
@@ -143,8 +181,26 @@ div.subsection{
       "buttons buttons"
       ;
   }
+  
   h1#title{
       width: 60%;
   }
+ 
    
+}
+
+
+#bottom-grid{
+    display: grid;
+    grid-template-areas: 
+    "rainbow rainbow"
+    "blue1 store";
+}
+
+div#store{
+    grid-area: store;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
